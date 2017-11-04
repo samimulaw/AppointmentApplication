@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Appointment application</title>  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+<link rel="stylesheet" href="css/myStyle.css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/myAppointmentScript.js"></script>
+
+</head>
+<body>    
+<div class="container">
+    <div  id="validationError" class="text-danger"> </div>
+    
+<div class="messeagebar">
+ <h1 class="text-center"> Appointment Application</h1>
+</div>
+<div>  
+      <button id="newbtn" class="btn btn-default">New</button>
+</div>
+<form  id="addAppointment" method="POST" hidden action="/cgi-bin/addAppointment.pl">
+    <div class="row">
+        
+    <div class="col-sm-9">        
+            <input type="button" value="Add"   class="btn btn-info" id="addbtn">       
+    </div>
+    <div class="col-sm-1">        
+      <input type="button" value="Cancel" class="btn btn-info" id="cancelbtn"/>          
+    </div>
+  </div>
+  <div>
+    <h1>Add Appointment :</h1>
+    <label>
+      <span>Date</span><input id="date" type="date" name="date" class="form-control"/>
+    </label><br />
+
+    <label>
+      <span>Time</span><input id="time" type="time" name="time" class="form-control"/>
+    </label><br />
+
+    <label>
+      <span>Description</span><textarea id="description" name="description" class="form-control"></textarea>    
+    </label>
+   
+  </div>
+</form>
+
+<div class="container text-center" >
+  <h1> Search </h1>
+<div class="input-group" >
+    <input   name="search" id="search"  type="text" class="form-control" placeholder="Search for...">
+    <span class="input-group-btn">
+      <button class="btn btn-secondary"  id= "searchbtn" >Search</button>
+    </span>
+  </div>
+</div>
+
+<div id="appointmentList" >
+  <table id="aptRecords" class="table"> </table>
+</div>
+
+
+<h2 id= "EmptyRecord"></h2>
+</div>
+</body>
+</html>
